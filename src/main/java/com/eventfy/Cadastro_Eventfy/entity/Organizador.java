@@ -14,7 +14,8 @@ public class Organizador {
 
     @Id
     @Column(name = "Id_Organizador")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "organizador_seq")
+    @SequenceGenerator(name = "organizador_seq", sequenceName = "organizador_seq", allocationSize = 1)
     private Long idOrganizador;
 
     @Column(name = "Nome_Organizador", nullable = false)
