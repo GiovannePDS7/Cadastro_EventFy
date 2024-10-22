@@ -11,6 +11,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.cors.CorsConfigurationSource;
 
+import java.util.List;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
@@ -35,7 +37,7 @@ public class SecurityConfiguration {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("http://localhost:4200"); // Permite o frontend Angular
+        config.setAllowedOrigins(List.of("https://event-fy.vercel.app/cadastro", "http://localhost:4200"));// Permite o frontend Angular
         config.addAllowedMethod("*"); // Permite todos os métodos HTTP
         config.addAllowedHeader("*"); // Permite todos os cabeçalhos
 
