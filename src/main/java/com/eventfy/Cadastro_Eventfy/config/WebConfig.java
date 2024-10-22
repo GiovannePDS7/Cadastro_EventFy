@@ -11,8 +11,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // Permite todas as rotas
-                .allowedOrigins("https://event-fy.vercel.app/cadastro") // Permite acesso do Angular
-                .allowedOrigins("https://cadastroeventfy-production.up.railway.app/organizadores/cadastro") // Permite acesso do Angular
+                .allowedOrigins("https://event-fy.vercel.app/cadastro", "https://cadastroeventfy-production.up.railway.app/organizadores/cadastro") // Permite acesso do Angular
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos permitidos
                 .allowedHeaders("*") // Permite todos os cabeçalhos
                 .allowCredentials(true);
