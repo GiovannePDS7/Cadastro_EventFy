@@ -37,7 +37,7 @@ public class SecurityConfiguration {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("https://event-fy.vercel.app/cadastro", "http://localhost:4200", "https://cadastroeventfy-production.up.railway.app"));// Permite o frontend Angular
+        config.setAllowedOrigins(List.of("*"));// Permite o frontend Angular
         config.addAllowedMethod("*"); // Permite todos os métodos HTTP
         config.addAllowedHeader("*"); // Permite todos os cabeçalhos
 
